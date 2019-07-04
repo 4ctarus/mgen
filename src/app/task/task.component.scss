@@ -1,0 +1,90 @@
+:host {
+  display: block;
+}
+
+
+$count: 10;
+$time: 2; //in seconds
+$size: 24;
+$color: #ffffff;
+
+.button-icon {
+  margin: 8px;
+}
+
+form {
+  padding: 0 16px 16px 16px;
+
+  button#submit {
+    width: 100%;
+    margin-top: 1em;
+  }
+}
+
+.loader {
+  margin-left: auto;
+  /* size */
+  width: $size + px;
+  height: $size + px;
+  animation: rotateloader $time + s infinite ease-in;
+}
+
+@keyframes rotateloader {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+.loader div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.loader div:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 10%;
+  height: 10%;
+  background-color: $color;
+  border-radius: 50%;
+}
+
+@for $i from 1 through $count {
+  .loader div:nth-child(#{$i}) {
+    transform: rotateZ(((360 / $count) * ($i - 1)) + deg);
+    animation: rotateCircle + $i $time + s infinite linear;
+    z-index: $count - $i;
+  }
+
+  @keyframes rotateCircle#{$i} {
+    #{percentage(((50 / $count) * ($i - 1)) / 100)} {
+      opacity: 0;
+    }
+
+    #{percentage((((50 / $count) + 0.0001) * ($i - 1)) / 100)} {
+      opacity: 1;
+      transform: rotateZ((0 - ((360 / $count) * ($i - 2))) + deg);
+    }
+
+    #{percentage((((50 / $count) * ($i - 0)) + 2) / 100)} {
+      transform: rotateZ((0 - ((360 / $count) * ($i - 1))) + deg);
+    }
+
+    #{percentage(((50 + ((50 / $count) * ($i - 0))) + 2) / 100)} {
+      transform: rotateZ((0 - ((360 / $count) * ($i - 1))) + deg);
+    }
+
+    100% {
+      transform: rotateZ((0 - ((360 / $count) * ($count - 1))) + deg);
+      opacity: 1;
+    }
+  }
+}

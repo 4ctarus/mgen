@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  padding: 16px 0;
+
+  &>*:not(app-ycalendar) {
+    padding: 0 16px;
+  }
+
+  .title {
+    padding: 16px;
+  }
+}
+
+#logo {
+  position: fixed;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  display: flex;
+  opacity: .1;
+  height: 100vh;
+  width: 100vw;
+  background: url('/assets/img/logo.png');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-position-x: center;
+}
+
+.title {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+
+  h2 {
+    margin: 0 0 8px 0;
+  }
+
+  span {
+    position: relative;
+    color: rgba(0, 0, 0, .54);
+  }
+
+  app-progress-bar {
+    margin-top: 16px;
+  }
+}
+
+.time-block {
+  display: flex;
+
+  .time {
+    color: #6aa617;
+    width: 42px;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+}
+
+.task-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  .task {
+    flex: 1;
+    margin: 8px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display: flex;
+
+    &.completed {
+      background-color: #edf4e3;
+      color: #6aa617;
+    }
+
+    .progress {
+      margin-right: 16px;
+      width: 36px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .detail {
+      flex: 1;
+
+      &>div {
+        font-weight: 600;
+      }
+
+      &>span,
+      &>ul {
+        color: rgba(0, 0, 0, .54);
+      }
+
+      &>ul {
+        margin: 8px 0;
+        padding: 0;
+
+        &>li>div {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    &.medic {
+      background-color: #6aa617;
+      color: white;
+
+      .detail span,
+      .detail ul {
+        color: rgba(255, 255, 255, 0.54);
+      }
+    }
+  }
+}

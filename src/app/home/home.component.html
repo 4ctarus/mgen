@@ -1,0 +1,59 @@
+<!--<div id="logo"></div>-->
+<app-ycalendar (dayChanged)="getTasks()"></app-ycalendar>
+
+<div class="title">
+  <h2>Tâches du jour</h2>
+  <span>{{ completed.total - completed.value }} tâches incomplètes</span>
+  <app-progress-bar [progress]="completed.value * 100 / completed.total"></app-progress-bar>
+</div>
+
+<div class="time-block" *ngFor="let timeTask of timeTasks | keyvalue">
+  <div class="time">{{ timeTask.key }}<br>00</div>
+
+  <div class="task-container">
+    <ng-container *ngFor="let task of timeTask.value">
+      <ng-container [ngSwitch]="task.type">
+        <ng-container *ngSwitchCase="13" [ngTemplateOutlet]="form" [ngTemplateOutletContext]="{ $implicit: task }">
+        </ng-container>
+        <ng-container *ngSwitchCase="14" [ngTemplateOutlet]="form" [ngTemplateOutletContext]="{ $implicit: task }">
+        </ng-container>
+        <ng-container *ngSwitchCase="15" [ngTemplateOutlet]="form" [ngTemplateOutletContext]="{ $implicit: task }">
+        </ng-container>
+        <ng-container *ngSwitchCase="16" [ngTemplateOutlet]="form" [ngTemplateOutletContext]="{ $implicit: task }">
+        </ng-container>
+        <ng-container *ngSwitchCase="17" [ngTemplateOutlet]="form" [ngTemplateOutletContext]="{ $implicit: task }">
+        </ng-container>
+        <ng-container *ngSwitchDefault [ngTemplateOutlet]="medic" [ngTemplateOutletContext]="{ $implicit: task }">
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #form let-task>
+  <div class="task" (click)="openFormTask(task)" [class.completed]="task.progress >= 100">
+    <div class="progress">
+      <app-progress-spinner [progress]="task.progress"></app-progress-spinner>
+    </div>
+    <div class="detail">
+      <div>{{ 'task.title.' + task.type | translate }}</div>
+      <span>{{ 'task.subtitle.' + task.type | translate }}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #medic let-task>
+  <div class="task" [class.completed]="task.progress >= 100">
+    <div class="progress">
+      <mat-icon svgIcon="medic"></mat-icon>
+    </div>
+    <div class="detail">
+      <div>{{ 'task.title.medic' | translate }}</div>
+      <ul>
+        <li>
+          <div><span>{{ 'task.medic.' + task.type | translate }}</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>

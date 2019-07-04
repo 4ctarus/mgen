@@ -1,0 +1,65 @@
+{
+  "text": "Neuropathique",
+  "questions": [
+    {
+      "text": "La douleur présente-t-elle une ou plusieurs des caractéristiques suivantes ?",
+      "multiple": true,
+      "choices": [
+        {
+          "text": "Brûlure",
+          "value": 0
+        },
+        {
+          "text": "Sensation de froid douloureux",
+          "value": 1
+        },
+        {
+          "text": "Décharges électriques",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "text": "La douleur est-elle associée dans la même région à un ou plusieurs des symptômes suivants ?",
+      "multiple": true,
+      "choices": [
+        {
+          "text": "Fourmillements",
+          "value": 0
+        },
+        {
+          "text": "Picotements",
+          "value": 1
+        },
+        {
+          "text": "Engourdissement",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "text": "La douleur est-elle localisée dans un territoire ou l'examen met en évidence ?",
+      "multiple": true,
+      "choices": [
+        {
+          "text": "Hypoesthésie au tact",
+          "value": 0
+        },
+        {
+          "text": "Hypoesthésie à la piqûre",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "text": "la douleur est-elle provoquée ou augmentée par :",
+      "multiple": true,
+      "choices": [
+        {
+          "text": "Le frottement",
+          "value": 0
+        }
+      ]
+    }
+  ]
+}

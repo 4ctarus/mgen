@@ -1,0 +1,213 @@
+{
+  "text": "Échelle ECPA",
+  "questions": [
+    {
+      "text": "EXPRESSION DU VISAGE : REGARD ET MIMIQUE",
+      "required": true,
+      "choices": [
+        {
+          "text": "Visage détendu",
+          "value": 0
+        },
+        {
+          "text": "Visage soucieux",
+          "value": 1
+        },
+        {
+          "text": "Le sujet grimace de temps en temps",
+          "value": 2
+        },
+        {
+          "text": "Regard effrayé et/ou visage crispé",
+          "value": 3
+        },
+        {
+          "text": "Expression complètement figée",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "POSITION SPONTANÉE au repos (recherche d’une attitude ou position antalgique)",
+      "required": true,
+      "choices": [
+        {
+          "text": "Aucune position antalgique",
+          "value": 0
+        },
+        {
+          "text": "Le sujet évite une position",
+          "value": 1
+        },
+        {
+          "text": "Le sujet choisit une position antalgique",
+          "value": 2
+        },
+        {
+          "text": "Le sujet recherche sans succès une position antalgique",
+          "value": 3
+        },
+        {
+          "text": "Le sujet reste immobile comme cloué par la douleur",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "MOUVEMENTS (OU MOBILITÉ) DU PATIENT (hors et/ou dans le lit)",
+      "required": true,
+      "choices": [
+        {
+          "text": "Le sujet bouge ou ne bouge pas comme d’habitude",
+          "value": 0
+        },
+        {
+          "text": "Le sujet bouge comme d’habitude* mais évite certains mouvements",
+          "value": 1
+        },
+        {
+          "text": "Lenteur, rareté des mouvements contrairement à son habitude",
+          "value": 2
+        },
+        {
+          "text": "Immobilité contrairement à son habitude",
+          "value": 3
+        },
+        {
+          "text": "Absence de mouvement ou forte agitation contrairement à son habitude",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "RELATION À AUTRUI",
+      "required": true,
+      "choices": [
+        {
+          "text": "Même type de contact que d’habitude",
+          "value": 0
+        },
+        {
+          "text": "Contact plus difficile à établir que d’habitude",
+          "value": 1
+        },
+        {
+          "text": "Évite la relation contrairement à l’habitude",
+          "value": 2
+        },
+        {
+          "text": "Absence de tout contact contrairement à l’habitude",
+          "value": 3
+        },
+        {
+          "text": "Indifférence totale contrairement à l’habitude",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Anticipation ANXIEUSE aux soins",
+      "required": true,
+      "choices": [
+        {
+          "text": "Le sujet ne montre pas d’anxiété",
+          "value": 0
+        },
+        {
+          "text": "Angoisse du regard, impression de peur",
+          "value": 1
+        },
+        {
+          "text": "Sujet agité",
+          "value": 2
+        },
+        {
+          "text": "Sujet agressif",
+          "value": 3
+        },
+        {
+          "text": "Cris, soupirs, gémissements",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Réactions pendant la MOBILISATION",
+      "required": true,
+      "choices": [
+        {
+          "text": "Le sujet se laisse mobiliser ou se mobilise sans y accorder une attention particulière",
+          "value": 0
+        },
+        {
+          "text": "Le sujet a un regard attentif et semble craindre la mobilisation et les soins",
+          "value": 1
+        },
+        {
+          "text": "Le sujet retient de la main ou guide les gestes lors de la mobilisation ou des soins",
+          "value": 2
+        },
+        {
+          "text": "Le sujet adopte une position antalgique lors de la mobilisation ou des soins",
+          "value": 3
+        },
+        {
+          "text": "Le sujet s’oppose à la mobilisation ou aux soins",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "Réactions pendant les SOINS des ZONES DOULOUREUSES",
+      "required": true,
+      "choices": [
+        {
+          "text": "Aucune réaction pendant les soins",
+          "value": 0
+        },
+        {
+          "text": "Réaction pendant les soins, sans plus",
+          "value": 1
+        },
+        {
+          "text": "Réaction au TOUCHER des zones douloureuses",
+          "value": 2
+        },
+        {
+          "text": "Réaction à l’EFFLEUREMENT des zones douloureuses",
+          "value": 3
+        },
+        {
+          "text": "L’approche des zones est impossible",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "text": "PLAINTES exprimées PENDANT le soin",
+      "required": true,
+      "choices": [
+        {
+          "text": "Le sujet ne se plaint pas",
+          "value": 0
+        },
+        {
+          "text": "Le sujet se plaint si le soignant s’adresse à lui",
+          "value": 1
+        },
+        {
+          "text": "Le sujet se plaint dès la présence du soignant",
+          "value": 2
+        },
+        {
+          "text": "Le sujet gémit ou pleure silencieusement de façon spontanée",
+          "value": 3
+        },
+        {
+          "text": "Le sujet crie ou se plaint violemment de façon spontanée",
+          "value": 4
+        }
+      ]
+    }
+  ]
+}

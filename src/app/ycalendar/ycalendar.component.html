@@ -1,0 +1,4 @@
+<button class="day" *ngFor="let day of days; index as i" [class.active]="day.active" (click)="selectDay(i)">
+  <span>{{ day.day }}</span>
+  <span>{{ day.date }}</span>
+</button>

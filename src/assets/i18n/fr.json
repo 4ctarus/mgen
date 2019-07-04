@@ -1,0 +1,23 @@
+{
+  "task": {
+    "title": {
+      "13": "Questionnaire SF12",
+      "14": "Questionnaire DN4",
+      "15": "Questionnaire HAD",
+      "16": "Questionnaire ECPA",
+      "17": "Questionnaire SF36",
+      "medic": "Prise de medicament programmée"
+    },
+    "subtitle": {
+      "13": "Qualité de vie",
+      "14": "Douleur neuropathique",
+      "15": "Troubles anxieux et dépressifs",
+      "16": "Douleur",
+      "17": "Qualité de vie"
+    },
+    "medic": {
+      "4": "Doliprane",
+      "35": "Pantaprazole"
+    }
+  }
+}

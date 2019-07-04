@@ -1,0 +1,313 @@
+{
+  "text": "Échelle HAD",
+  "questions": [
+    {
+      "text": "Je me sens tendu(e) ou énervé(e)",
+      "required": true,
+      "choices": [
+        {
+          "text": "Jamais",
+          "value": 0
+        },
+        {
+          "text": "De temps en temps",
+          "value": 1
+        },
+        {
+          "text": "Souvent",
+          "value": 2
+        },
+        {
+          "text": "La plupart du temps",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je prends plaisir aux mêmes choses qu’autrefois",
+      "required": true,
+      "choices": [
+        {
+          "text": "Oui, tout autant",
+          "value": 0
+        },
+        {
+          "text": "Pas autant ",
+          "value": 1
+        },
+        {
+          "text": "Un peu seulement",
+          "value": 2
+        },
+        {
+          "text": "Presque plus",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "J’ai une sensation de peur comme si quelque chose d’horrible allait m’arriver",
+      "required": true,
+      "choices": [
+        {
+          "text": "Pas du tout",
+          "value": 0
+        },
+        {
+          "text": "Un peu, mais cela ne m’inquiète pas",
+          "value": 1
+        },
+        {
+          "text": "Oui, mais ce n’est pas trop grave",
+          "value": 2
+        },
+        {
+          "text": "Oui, très nettement",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je ris facilement et vois le bon côté des choses",
+      "required": true,
+      "choices": [
+        {
+          "text": "Autant que par le passé",
+          "value": 0
+        },
+        {
+          "text": "Plus autant qu’avant",
+          "value": 1
+        },
+        {
+          "text": "Vraiment moins qu’avant",
+          "value": 2
+        },
+        {
+          "text": "Plus du tout",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je me fais du souci",
+      "required": true,
+      "choices": [
+        {
+          "text": "Très occasionnellement",
+          "value": 0
+        },
+        {
+          "text": "Occasionnellement",
+          "value": 1
+        },
+        {
+          "text": "Assez souvent",
+          "value": 2
+        },
+        {
+          "text": "Très souvent",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je suis de bonne humeur",
+      "required": true,
+      "choices": [
+        {
+          "text": "La plupart du temps",
+          "value": 0
+        },
+        {
+          "text": "Assez souvent",
+          "value": 1
+        },
+        {
+          "text": "Rarement",
+          "value": 2
+        },
+        {
+          "text": "Jamais",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je peux rester tranquillement assis(e) à ne rien faire et me sentir décontracté(e)",
+      "required": true,
+      "choices": [
+        {
+          "text": "Oui, quoi qu’il arrive",
+          "value": 0
+        },
+        {
+          "text": "Oui, en général",
+          "value": 1
+        },
+        {
+          "text": "Rarement",
+          "value": 2
+        },
+        {
+          "text": "Jamais",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "J’ai l’impression de fonctionner au ralenti",
+      "required": true,
+      "choices": [
+        {
+          "text": "Jamais",
+          "value": 0
+        },
+        {
+          "text": "Parfois",
+          "value": 1
+        },
+        {
+          "text": "Très souvent",
+          "value": 2
+        },
+        {
+          "text": "Presque toujours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "J’éprouve des sensations de peur et j’ai l’estomac noué",
+      "required": true,
+      "choices": [
+        {
+          "text": "Jamais",
+          "value": 0
+        },
+        {
+          "text": "Parfois",
+          "value": 1
+        },
+        {
+          "text": "Assez souvent",
+          "value": 2
+        },
+        {
+          "text": "Très souvent",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je ne m’intéresse plus à mon apparence",
+      "required": true,
+      "choices": [
+        {
+          "text": "J’y prête autant d’attention que par le passé",
+          "value": 0
+        },
+        {
+          "text": "Il se peut que je n’y fasse plus autant attention",
+          "value": 1
+        },
+        {
+          "text": "Je n’y accorde pas autant d’attention que je devrais",
+          "value": 2
+        },
+        {
+          "text": "Plus du tout",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": " J’ai la bougeotte et n’arrive pas à tenir en place",
+      "required": true,
+      "choices": [
+        {
+          "text": "Pas du tout",
+          "value": 0
+        },
+        {
+          "text": "Pas tellement",
+          "value": 1
+        },
+        {
+          "text": "Un peu",
+          "value": 2
+        },
+        {
+          "text": " Oui, c’est tout à fait le cas",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je me réjouis d’avance à l’idée de faire certaines choses",
+      "required": true,
+      "choices": [
+        {
+          "text": "Autant qu’avant",
+          "value": 0
+        },
+        {
+          "text": "Un peu moins qu’avant",
+          "value": 1
+        },
+        {
+          "text": "Bien moins qu’avant",
+          "value": 2
+        },
+        {
+          "text": "Presque jamais",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "J’éprouve des sensations soudaines de panique",
+      "required": true,
+      "choices": [
+        {
+          "text": "Jamais",
+          "value": 0
+        },
+        {
+          "text": "Pas très souvent",
+          "value": 1
+        },
+        {
+          "text": "Assez souvent",
+          "value": 2
+        },
+        {
+          "text": "Vraiment très souvent",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "text": "Je peux prendre plaisir à un bon livre ou à une bonne émission de radio ou de télévision",
+      "required": true,
+      "choices": [
+        {
+          "text": "Souvent",
+          "value": 0
+        },
+        {
+          "text": "Parfois",
+          "value": 1
+        },
+        {
+          "text": "Rarement",
+          "value": 2
+        },
+        {
+          "text": "Très rarement",
+          "value": 3
+        }
+      ]
+    }
+  ]
+}

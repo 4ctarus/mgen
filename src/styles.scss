@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 0 !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  color: rgba(0, 0, 0, .87);
+  font-size: 1em;
+}
+
+input {
+  color: rgba(0, 0, 0, .87);
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, .54);
+}
+
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6aa617;
+  color: white;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  min-width: 148px;
+}
+
+.button-icon {
+  background: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+.custom-dialog {
+  mat-dialog-container {
+    padding: 0;
+  }
+}

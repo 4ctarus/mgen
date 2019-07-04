@@ -1,0 +1,47 @@
+<h2>{{ survey.text }}</h2>
+<div [formGroup]="fai" class="survey">
+  <div class="question-container" *ngFor="let question of survey.questions; index as i" [class.invalid]="fai.controls[i].touched && fai.controls[i].status === 'INVALID'">
+    <div class="question-index">
+      <span>{{ i + 1}}</span>
+    </div>
+    <div class="question">
+      <!-- Input -->
+      <ng-container *ngIf="!question.choices" [ngTemplateOutlet]="input"
+        [ngTemplateOutletContext]="{ $implicit: { question: question, i: i } }">
+      </ng-container>
+      <!-- Radio -->
+      <ng-container *ngIf="question.choices && !question.multiple" [ngTemplateOutlet]="radio"
+        [ngTemplateOutletContext]="{ $implicit: { question: question, i: i } }">
+      </ng-container>
+      <!-- CheckBox -->
+      <ng-container *ngIf="question.choices && question.multiple" [ngTemplateOutlet]="checkbox"
+        [ngTemplateOutletContext]="{ $implicit: { question: question, i: i } }">
+      </ng-container>
+    </div>
+  </div>
+
+  <ng-template #input let-d>
+    <label [id]="'label-' + survey.id + '-' + d.i" class="question-text" [for]="survey.id + '-' + d.i">{{ d.question.text }}</label>
+    <input class="question-input" [id]="survey.id + '-' + d.i" type="text" placeholder="Add answer ..." [formControlName]="d.i">
+  </ng-template>
+  
+  <ng-template #radio let-d>
+    <label [id]="'label-' + survey.id + '-' + d.i" class="question-text">{{ d.question.text }}</label>
+    <fieldset class="question-radio-container">
+      <div class="question-radio" *ngFor="let choice of d.question.choices; index as i">
+        <label [for]="survey.id + '-' + d.i + '-' + i">{{ choice.text }}</label>
+        <input [id]="survey.id + '-' + d.i + '-' + i" type="radio" [formControlName]="d.i" [value]="choice.value">
+      </div>
+    </fieldset>
+  </ng-template>
+  
+  <ng-template #checkbox let-d>
+    <label [id]="'label-' + survey.id + '-' + d.i" class="question-text">{{ d.question.text }}</label>
+    <fieldset class="question-radio-container" [formArrayName]="d.i">
+      <div class="question-radio" *ngFor="let choice of d.question.choices; index as i">
+        <label [for]="survey.id + '-' + d.i + '-' + i">{{ choice.text }}</label>
+        <input [id]="survey.id + '-' + d.i + '-' + i" type="checkbox" [formControlName]="i" [value]="choice.value">
+      </div>
+    </fieldset>
+  </ng-template>
+</div>
