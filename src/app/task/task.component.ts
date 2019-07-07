@@ -52,12 +52,12 @@ export class TaskComponent implements OnInit, OnDestroy {
     this.close();
   }
 
-  private close() {
+  private close(completed: boolean = false) {
     const value = {};
     Object.keys(this.fg.value).forEach(k => {
       value[k] = {
         value: this.fg.value[k],
-        progress: this.getProgress(k)
+        progress: completed ? 100 : this.getProgress(k)
       };
     });
     this.dialogRef.close(value);
@@ -67,6 +67,10 @@ export class TaskComponent implements OnInit, OnDestroy {
     const fa = (this.fg.controls[index] as FormArray);
     let invalid = 0;
     fa.controls.forEach(x => {
+      // for checkbox 
+      if (x.value instanceof Array && x.value.filter(x => x).length === 0) {
+        invalid++;
+      }
       if (x.invalid) {
         invalid++;
       }
@@ -89,7 +93,7 @@ export class TaskComponent implements OnInit, OnDestroy {
       });
 
       if (!scrolled) {
-        this.close();
+        this.close(true);
       }
     });
 
