@@ -1,0 +1,61 @@
+<button mat-dialog-close class="button-icon">
+  <mat-icon svgIcon="back"></mat-icon>
+</button>
+
+<ng-container *ngIf="survey">
+
+  <h2>{{ survey.text }}</h2>
+  <form class="survey" #f="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="question-container" *ngFor="let question of survey.questions; index as i" [class.invalid]="(f.controls[i] && f.controls[i].touched) && (f.controls[i] && f.controls[i].status) === 'INVALID'">
+      <div class="question-index">
+        <span>{{ i + 1}}</span>
+      </div>
+      <div class="question">
+        <!-- Input -->
+        <ng-container *ngIf="!question.choices" [ngTemplateOutlet]="input"
+          [ngTemplateOutletContext]="{ $implicit: { question: question, i: i } }">
+        </ng-container>
+        <!-- Radio -->
+        <ng-container *ngIf="question.choices && !question.multiple" [ngTemplateOutlet]="radio"
+          [ngTemplateOutletContext]="{ $implicit: { question: question, i: i } }">
+        </ng-container>
+        <!-- CheckBox -->
+        <ng-container *ngIf="question.choices && question.multiple" [ngTemplateOutlet]="checkbox"
+          [ngTemplateOutletContext]="{ $implicit: { question: question, i: i } }">
+        </ng-container>
+      </div>
+    </div>
+
+    <ng-template #input let-d>
+      <label [id]="'label-' + survey.id + '-' + d.i" class="question-text"
+        [for]="survey.id + '-' + d.i">{{ d.question.text }}</label>
+      <input class="question-input" [id]="survey.id + '-' + d.i" type="text" placeholder="Add answer ..."
+        [name]="d.i+''" [(ngModel)]="task.value[d.i]" [required]="d.question.required">
+    </ng-template>
+
+    <ng-template #radio let-d>
+      <label [id]="'label-' + survey.id + '-' + d.i" class="question-text">{{ d.question.text }}</label>
+      <fieldset class="question-radio-container">
+        <div class="question-radio" *ngFor="let choice of d.question.choices; index as i">
+          <label [for]="survey.id + '-' + d.i + '-' + i">{{ choice.text }}</label>
+          <input [id]="survey.id + '-' + d.i + '-' + i" type="radio" [name]="d.i+''" [(ngModel)]="task.value[d.i]" [value]="choice.value" [required]="d.question.required">
+        </div>
+      </fieldset>
+    </ng-template>
+
+    <ng-template #checkbox let-d>
+      <label [id]="'label-' + survey.id + '-' + d.i" class="question-text">{{ d.question.text }}</label>
+      <fieldset class="question-radio-container" [ngModelGroup]="d.i">
+        <div class="question-radio" *ngFor="let choice of d.question.choices; index as i">
+          <label [for]="survey.id + '-' + d.i + '-' + i">{{ choice.text }}</label>
+          <input [id]="survey.id + '-' + d.i + '-' + i" type="checkbox" [name]="i+''" [(ngModel)]="task.value[d.i][i]">
+        </div>
+      </fieldset>
+    </ng-template>
+
+    <button id="submit" class="button" type="submit">
+      <span>Valider</span>
+    </button>
+  </form>
+
+</ng-container>

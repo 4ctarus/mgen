@@ -1,0 +1,16 @@
+form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    border: none;
+    width: 100%;
+    padding: 16px;
+    font-size: 3.4em;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+  }
+}

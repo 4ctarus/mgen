@@ -2,7 +2,27 @@
   display: block;
 }
 
+
+$count: 10;
+$time: 2; //in seconds
+$size: 24;
+$color: #ffffff;
+
+.button-icon {
+  margin: 8px;
+}
+
+form {
+  padding: 0 16px 16px 16px;
+
+  button#submit {
+    width: 100%;
+    margin-top: 1em;
+  }
+}
+
 h2 {
+  padding: 0 16px;
   margin-top: 0;
 }
 

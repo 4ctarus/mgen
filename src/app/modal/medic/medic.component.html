@@ -1,0 +1,4 @@
+<form (ngSubmit)="onSubmit()">
+  <input type="number" [(ngModel)]="task.medic.actual" [max]="task.medic.total" min="0" [ngModelOptions]="{standalone: true}" required>
+  <button class="button" type="submit">Soumettre</button>
+</form>

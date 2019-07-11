@@ -43,17 +43,16 @@
 </ng-template>
 
 <ng-template #medic let-task>
-  <div class="task" [class.completed]="task.progress >= 100">
+  <div class="task" (click)="openMedicModal(task)" [class.completed]="task.progress >= 100">
     <div class="progress">
       <mat-icon svgIcon="medic"></mat-icon>
     </div>
     <div class="detail">
-      <div>{{ 'task.title.medic' | translate }}</div>
-      <ul>
-        <li>
-          <div><span>{{ 'task.medic.' + task.type | translate }}</span></div>
-        </li>
-      </ul>
+      <div>{{ 'task.medic.' + task.type | translate }}</div>
+      <span>pendant le repas</span>
+    </div>
+    <div class="total">
+      {{ task.medic.actual }} <b>/ {{ task.medic.total }}</b>
     </div>
   </div>
 </ng-template>

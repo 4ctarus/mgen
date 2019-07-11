@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TimeTask } from '../models/task';
+import { TimeTask, TaskType } from '../models/task';
 import { HttpClient } from '@angular/common/http';
 import Survey from '../models/survey';
 
@@ -23,7 +23,7 @@ export class ApiService {
   }
 
   getPeriods() {
-    return this.http.get<{data: any[]}>(`./assets/test/periods.json`);
+    return this.http.get<{ data: any[] }>(`./assets/test/periods.json`);
   }
 
   toTimeTask(data: any[], date: Date): TimeTask {
@@ -39,11 +39,23 @@ export class ApiService {
         if (!tt.hasOwnProperty(hour)) {
           tt[hour] = [];
         }
-        tt[hour].push({
-          id: period.id,
-          type: period.title,
-          progress: 0
-        });
+        if (period.title in TaskType) {
+          tt[hour].push({
+            id: period.id,
+            type: period.title,
+            progress: 0
+          });
+        } else {
+          tt[hour].push({
+            id: period.id,
+            type: period.title,
+            progress: 0,
+            medic: {
+              total: 3,
+              actual: 0
+            }
+          });
+        }
       }
     });
     console.log(tt);

@@ -8,14 +8,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SurveyComponent } from './survey/survey.component';
 import { HomeComponent } from './home/home.component';
-import { TaskComponent } from './task/task.component';
 import { YcalendarComponent } from './ycalendar/ycalendar.component';
 import { ProgressBarComponent } from './component/progress-bar/progress-bar.component';
 import { ProgressSpinnerComponent } from './component/progress-spinner/progress-spinner.component';
 import { AppMaterialModule } from './app-material.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { MedicComponent } from './modal/medic/medic.component';
+import { SurveyComponent } from './modal/survey/survey.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,12 +24,12 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    SurveyComponent,
     HomeComponent,
-    TaskComponent,
     YcalendarComponent,
     ProgressBarComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+    SurveyComponent,
+    MedicComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +49,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   providers: [],
   entryComponents: [
-    TaskComponent
+    SurveyComponent,
+    MedicComponent
   ],
   bootstrap: [AppComponent]
 })

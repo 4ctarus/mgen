@@ -2,7 +2,11 @@ export default interface Task {
   id: number;
   type: TaskType | number;
   progress: number;
-  value?: any[];
+  value?: {};
+  medic?: {
+    total: number,
+    actual: number
+  };
 }
 
 export interface TimeTask {

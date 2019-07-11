@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import Task, { TimeTask } from '../models/task';
-import { TaskComponent } from '../task/task.component';
 import { MatDialog } from '@angular/material';
 import { ApiService } from '../service/api.service';
 import { YcalendarComponent } from '../ycalendar/ycalendar.component';
-import { flatMap, mergeMap, tap, map, mergeAll, concatAll } from 'rxjs/operators';
-import { from, of } from 'rxjs';
+import { MedicComponent } from '../modal/medic/medic.component';
+import { SurveyComponent } from '../modal/survey/survey.component';
 
 @Component({
   selector: 'app-home',
@@ -46,7 +45,7 @@ export class HomeComponent implements OnInit {
     console.log(this.completed);
   }
 
-  openFormTask(task: Task) {
+  /*openFormTask(task: Task) {
     if (task.progress >= 100) {
       return;
     }
@@ -75,6 +74,34 @@ export class HomeComponent implements OnInit {
       });
 
       this.checkCompleted();
+    });
+  }*/
+
+  openFormTask(task: Task) {
+    if (task.progress >= 100) {
+      return;
+    }
+    this.dialog.open(SurveyComponent, {
+      height: '100vh',
+      width: '100vw',
+      maxWidth: '100vw',
+      panelClass: 'custom-dialog',
+      data: task
+    });
+  }
+
+  openMedicModal(task: Task) {
+    if (task.progress >= 100) {
+      return;
+    }
+    this.dialog.open(MedicComponent, {
+      width: '100vw',
+      maxWidth: '100vw',
+      position: {
+        bottom: '0'
+      },
+      panelClass: 'custom-dialog',
+      data: task
     });
   }
 }
