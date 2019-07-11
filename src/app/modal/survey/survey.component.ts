@@ -2,10 +2,9 @@ import { Component, OnInit, Inject, OnDestroy, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import Task from 'src/app/models/task';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 import { ApiService } from 'src/app/service/api.service';
 import Survey from 'src/app/models/survey';
-import { NgForm, FormControl, FormArray } from '@angular/forms';
+import { NgForm, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-survey',
@@ -20,8 +19,7 @@ export class SurveyComponent implements OnInit, OnDestroy {
     @Inject(MAT_DIALOG_DATA) public task: Task,
     private dialogRef: MatDialogRef<SurveyComponent>,
     private api: ApiService,
-    private router: Router,
-    private location: Location) {
+    private router: Router) {
     // add param in url to be able to back
     this.router.navigate([], {
       fragment: 'survey',
@@ -77,7 +75,7 @@ export class SurveyComponent implements OnInit, OnDestroy {
   }
 
   private close(completed: boolean = false) {
-    this.location.back();
+    this.router.navigate([]);
     if (this.f) {
       this.task.progress = completed ? 100 : this.getProgress();
     }

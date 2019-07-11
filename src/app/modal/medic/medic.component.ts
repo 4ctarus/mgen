@@ -2,7 +2,6 @@ import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import Task from 'src/app/models/task';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-medic',
@@ -14,8 +13,7 @@ export class MedicComponent implements OnInit, OnDestroy {
   constructor(
     @Inject(MAT_DIALOG_DATA) public task: Task,
     private dialogRef: MatDialogRef<MedicComponent>,
-    private router: Router,
-    private location: Location) {
+    private router: Router) {
       // add param in url to be able to back
       this.router.navigate([], {
         fragment: 'medic',
@@ -31,7 +29,7 @@ export class MedicComponent implements OnInit, OnDestroy {
   }
 
   private close(completed: boolean = false) {
-    this.location.back();
+    this.router.navigate([]);
 
     if (this.task.medic.total === this.task.medic.actual) {
       this.task.progress = 100;

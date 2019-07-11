@@ -45,48 +45,20 @@ export class HomeComponent implements OnInit {
     console.log(this.completed);
   }
 
-  /*openFormTask(task: Task) {
-    if (task.progress >= 100) {
-      return;
-    }
-    const dialogRef = this.dialog.open(TaskComponent, {
-      height: '100vh',
-      width: '100vw',
-      maxWidth: '100vw',
-      panelClass: 'custom-dialog',
-      data: task
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      Object.keys(result).forEach(key => {
-        const value = result[key].value;
-        const progress = result[key].progress;
-
-        Object.keys(this.timeTasks).forEach(hour => {
-          this.timeTasks[hour].forEach(task => {
-            if ('' + task.id === key) {
-              task.value = value;
-              task.progress = progress;
-              console.log('finded', task);
-            }
-          });
-        });
-      });
-
-      this.checkCompleted();
-    });
-  }*/
-
   openFormTask(task: Task) {
     if (task.progress >= 100) {
       return;
     }
-    this.dialog.open(SurveyComponent, {
+
+    const dialogRef = this.dialog.open(SurveyComponent, {
       height: '100vh',
       width: '100vw',
       maxWidth: '100vw',
       panelClass: 'custom-dialog',
       data: task
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.checkCompleted();
     });
   }
 
@@ -94,7 +66,8 @@ export class HomeComponent implements OnInit {
     if (task.progress >= 100) {
       return;
     }
-    this.dialog.open(MedicComponent, {
+
+    const dialogRef = this.dialog.open(MedicComponent, {
       width: '100vw',
       maxWidth: '100vw',
       position: {
@@ -102,6 +75,9 @@ export class HomeComponent implements OnInit {
       },
       panelClass: 'custom-dialog',
       data: task
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.checkCompleted();
     });
   }
 }
